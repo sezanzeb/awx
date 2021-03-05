@@ -71,7 +71,7 @@ def test_config_precedence():
 def test_config_file_precedence():
     """Ignores AWXKIT_CREDENTIAL_FILE if cli args are set"""
     os.mkdir('/tmp/awx-test/')
-    with open('/tmp/awx-test/config.json') as f:
+    with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
                 'username': 'IGNORE',
@@ -97,7 +97,7 @@ def test_config_file_precedence():
 def test_config_file_precedence_2():
     """Ignores AWXKIT_CREDENTIAL_FILE if TOWER_* vars are set."""
     os.mkdir('/tmp/awx-test/')
-    with open('/tmp/awx-test/config.json') as f:
+    with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
                 'username': 'IGNORE',
@@ -123,7 +123,7 @@ def test_config_file_precedence_2():
 def test_config_file():
     """Reads username and password from AWXKIT_CREDENTIAL_FILE."""
     os.mkdir('/tmp/awx-test/')
-    with open('/tmp/awx-test/config.json') as f:
+    with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
                 'username': 'mary',
