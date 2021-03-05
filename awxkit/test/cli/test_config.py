@@ -70,7 +70,7 @@ def test_config_precedence():
 
 def test_config_file_precedence():
     """Ignores AWXKIT_CREDENTIAL_FILE if cli args are set"""
-    os.makedirs('/tmp/awx-test/', exist_ok = True)
+    os.makedirs('/tmp/awx-test/', exist_ok=True)
     with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
@@ -96,7 +96,7 @@ def test_config_file_precedence():
 
 def test_config_file_precedence_2():
     """Ignores AWXKIT_CREDENTIAL_FILE if TOWER_* vars are set."""
-    os.makedirs('/tmp/awx-test/', exist_ok = True)
+    os.makedirs('/tmp/awx-test/', exist_ok=True)
     with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
@@ -122,8 +122,7 @@ def test_config_file_precedence_2():
 
 def test_config_file():
     """Reads username and password from AWXKIT_CREDENTIAL_FILE."""
-    os.makedirs('/tmp/awx-test/', exist_ok = True)
-    os.makedirs(path, mode = 0o777, exist_ok = False)
+    os.makedirs('/tmp/awx-test/', exist_ok=True)
     with open('/tmp/awx-test/config.json', 'w') as f:
         json.dump({
             'default': {
